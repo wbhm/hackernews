@@ -4,6 +4,7 @@ import './App.css';
 import data from './data/sampleData';
 import Button from '@material-ui/core/Button';
 import ImageOverlay from './components/ImageOverlay';
+import MeetingList from './components/MeetingList';
 
 class App extends Component {
 
@@ -17,12 +18,7 @@ class App extends Component {
               fontFamily:'Helvetica',
               fontSize:'16px',
               letterSpacing: '1px',
-          },
-          listItem:{
-              margin: '3px',
-              fontFamily:'Helvetica',
-              fontSize:'14px',
-          },
+          }
       };
     return (
       <div className="App">
@@ -30,14 +26,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-          <ImageOverlay image={image} title="This is a Sample Title" subtitle="This is the slug for the sub title placeholder..." />
+          <ImageOverlay image={image} title="This is a an example of placing text over an image" subtitle="This is the placeholder for the some other text..." />
           <Button style={styles.button} variant="contained" color="primary">Sample Button</Button>
           <div>
-              {
-                  list.map((item)=>{
-                      return <div style={styles.listItem} key={item.id}>{item.name}</div>
-                  })
-              }
+            <MeetingList data={data}/>
           </div>
       </div>
     );
