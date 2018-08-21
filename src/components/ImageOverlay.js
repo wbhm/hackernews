@@ -27,8 +27,12 @@ const styles = {
     }
 };
 
+const setBackgroundImage = (image) => {
+    styles.image.backgroundImage = 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.9)),url(' + image + ')';
+};
+
 const  ImageOverlay = (props) => {
-    styles.image.backgroundImage = 'linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.9)),url(' + props.image + ')';
+   setBackgroundImage(props.image);
     return (
         <div className="image-Container">
             <div className="image" style={styles.image}>
